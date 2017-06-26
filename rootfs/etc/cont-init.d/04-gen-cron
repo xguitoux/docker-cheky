@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+echo "==> Generate 'cheky' check cron"
+/usr/local/bin/envtpl /etc/envtpl/check-cron.tpl -o /etc/cron.d/cheky
