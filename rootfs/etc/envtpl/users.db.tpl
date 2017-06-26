@@ -1,0 +1,1 @@
+{{.CHEKY_ADMIN_PASSWORD_SHA1}}admin
