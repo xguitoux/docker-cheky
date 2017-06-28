@@ -2,7 +2,7 @@
 
 echo "==> Generate 'cheky' check cron"
 # Set default value
-if [ -z $CHEKY_CRON_INTERVAL ]; then
+if [ "$CHEKY_CRON_INTERVAL" == "" ]; then
     export CHEKY_CRON_INTERVAL="*/30 * * * *"
 fi
 
