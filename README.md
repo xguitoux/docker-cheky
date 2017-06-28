@@ -45,6 +45,7 @@ Set the **Checky** base URL.
     CHEKY_BASEURL=http://cheky.example.com
     ```
 
+* The default base URL is ``http://cheky.local``.
 
 
 ### Admin password

@@ -16,6 +16,10 @@ echo "==> Generate 'config.ini'"
 if [ -n $CHEKY_CONFIG_MAILER ]; then
     export CHEKY_CONFIG_MAILER=0
 fi
+if [ -n $CHEKY_BASEURL ]; then
+    export CHEKY_BASEURL=http://cheky.local
+fi
+
 if [ ! -f $CHEKY_VAR_DIR/config.ini ]; then
     /usr/local/bin/envtpl /etc/envtpl/config.ini.tpl -o $CHEKY_VAR_DIR/config.ini
 else
