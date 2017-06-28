@@ -1,6 +1,6 @@
 # docker-cheky
 
-Dockerize version of the **[Cheky](https://github.com/Blount/LBCAlerte)** tool.
+Dockerize version of **[Cheky](https://github.com/Blount/LBCAlerte)**.
 
 
 
@@ -11,7 +11,7 @@ Dockerize version of the **[Cheky](https://github.com/Blount/LBCAlerte)** tool.
 Simply run the docker image and expose the port 80:
 
 ```
-$ docker run -d --name=cheky -p 80:80 skurtzemann/cheky:3.4-1
+$ docker run -d --name=cheky -p 80:80 skurtzemann/cheky:3.4-2
 ```
 
 ### Persistent data
@@ -19,7 +19,7 @@ $ docker run -d --name=cheky -p 80:80 skurtzemann/cheky:3.4-1
 To persist **Cheky** configuration you can bind mount a docker volume to ``/var/www/html/var/``.
 
 ```
-$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  skurtzemann/cheky:3.4-1
+$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  skurtzemann/cheky:3.4-2
 ```
 
 
@@ -45,13 +45,16 @@ Set the **Checky** base URL.
     CHEKY_BASEURL=http://cheky.example.com
     ```
 
+* The default base URL is ``http://cheky.local``.
 
 
 ### Admin password
 
-Set the ``admin`` password.
+Set the ``admin`` password. 
 
-The ``admin`` password can be set in plain test or with it SHA1 checksum.  
+* The default password is ``admin``.
+
+The ``admin`` password can be set in plain test or with it SHA1 checksum.
 
 #### ``CHEKY_ADMIN_PASSWORD``
 
@@ -77,7 +80,9 @@ Configure the ``mailer`` for alerts.
 
 #### ``CHEKY_CONFIG_MAILER``
 
-Enable/disable the ``mailer`` configuration : ``0|1``
+Disable/enable the ``mailer`` configuration : ``0|1``
+
+* The default value is ``0``.
 
 #### ``CHEKY_MAILER_SMTP_HOST``
 
@@ -126,3 +131,5 @@ Set the cron interval for the **Cheky** [check cronjob](https://www.cheky.net/do
     ```
     CHEKY_CRON_INTERVAL="*/5 * * * *"
     ```
+
+* The default value is ``*/30 * * * *``.
