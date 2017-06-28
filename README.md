@@ -77,7 +77,9 @@ Configure the ``mailer`` for alerts.
 
 #### ``CHEKY_CONFIG_MAILER``
 
-Enable/disable the ``mailer`` configuration : ``0|1``
+Disable/enable the ``mailer`` configuration : ``0|1``
+
+* The default value is ``0``.
 
 #### ``CHEKY_MAILER_SMTP_HOST``
 

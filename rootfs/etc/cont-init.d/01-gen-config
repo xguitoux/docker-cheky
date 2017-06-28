@@ -12,6 +12,10 @@ for f in ${FOLDERS[@]}; do
 done
 
 echo "==> Generate 'config.ini'"
+# Set default values 
+if [ -n $CHEKY_CONFIG_MAILER ]; then
+    export CHEKY_CONFIG_MAILER=0
+fi
 if [ ! -f $CHEKY_VAR_DIR/config.ini ]; then
     /usr/local/bin/envtpl /etc/envtpl/config.ini.tpl -o $CHEKY_VAR_DIR/config.ini
 else
