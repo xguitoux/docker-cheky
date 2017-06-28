@@ -13,10 +13,10 @@ done
 
 echo "==> Generate 'config.ini'"
 # Set default values 
-if [ -n $CHEKY_CONFIG_MAILER ]; then
+if [ -z $CHEKY_CONFIG_MAILER ]; then
     export CHEKY_CONFIG_MAILER=0
 fi
-if [ -n $CHEKY_BASEURL ]; then
+if [ -z $CHEKY_BASEURL ]; then
     export CHEKY_BASEURL=http://cheky.local
 fi
 
