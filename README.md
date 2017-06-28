@@ -131,3 +131,5 @@ Set the cron interval for the **Cheky** [check cronjob](https://www.cheky.net/do
     ```
     CHEKY_CRON_INTERVAL="*/5 * * * *"
     ```
+
+* The default value is ``*/30 * * * *``.
