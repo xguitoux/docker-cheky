@@ -5,7 +5,7 @@ USERS_FILE=/var/www/html/var/users.db
 generate_users_file() {
     if [ -z $CHEKY_ADMIN_PASSWORD_SHA1 ]; then
         # Set default password
-        if [ -n $CHEKY_ADMIN_PASSWORD ]; then
+        if [ -z $CHEKY_ADMIN_PASSWORD ]; then
             export CHEKY_ADMIN_PASSWORD=admin
         fi
 
