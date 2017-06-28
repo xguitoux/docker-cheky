@@ -1,6 +1,6 @@
 # docker-cheky
 
-Dockerize version of the **[Cheky](https://github.com/Blount/LBCAlerte)** tool.
+Dockerize version of **[Cheky](https://github.com/Blount/LBCAlerte)**.
 
 
 
