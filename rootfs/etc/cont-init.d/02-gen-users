@@ -6,6 +6,7 @@ generate_users_file() {
     if [ -z $CHEKY_ADMIN_PASSWORD_SHA1 ]; then
         # Set default password
         if [ -z $CHEKY_ADMIN_PASSWORD ]; then
+            echo "    use default value for 'CHEKY_ADMIN_PASSWORD'"
             export CHEKY_ADMIN_PASSWORD=admin
         fi
 
