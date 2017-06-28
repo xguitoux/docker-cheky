@@ -50,9 +50,11 @@ Set the **Checky** base URL.
 
 ### Admin password
 
-Set the ``admin`` password.
+Set the ``admin`` password. 
 
-The ``admin`` password can be set in plain test or with it SHA1 checksum.  
+* The default password is ``admin``.
+
+The ``admin`` password can be set in plain test or with it SHA1 checksum.
 
 #### ``CHEKY_ADMIN_PASSWORD``
 

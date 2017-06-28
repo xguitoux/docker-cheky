@@ -4,6 +4,11 @@ USERS_FILE=/var/www/html/var/users.db
 
 generate_users_file() {
     if [ -z $CHEKY_ADMIN_PASSWORD_SHA1 ]; then
+        # Set default password
+        if [ -n $CHEKY_ADMIN_PASSWORD ]; then
+            export CHEKY_ADMIN_PASSWORD=admin
+        fi
+
         echo "    generate sha1sum from 'CHEKY_ADMIN_PASSWORD' env variable"
         SHA1SUM=$(echo -n "$CHEKY_ADMIN_PASSWORD" | sha1sum | cut -d" " -f1)
         export CHEKY_ADMIN_PASSWORD_SHA1=$SHA1SUM
