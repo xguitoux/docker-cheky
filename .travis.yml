@@ -5,8 +5,9 @@ jobs:
   include:
     - stage: build docker image
       script:
+      - VERSION=$(cat VERSION)
       - echo $DOCKER_USERNAME
       - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-      - docker build -t $DOCKER_USERNAME/docker-checky:3.6 -t $DOCKER_USERNAME/docker-checky:latest .
+      - docker build -t $DOCKER_USERNAME/docker-checky:$VERSION -t $DOCKER_USERNAME/docker-checky:latest .
       - docker images
       - docker push $DOCKER_USERNAME/docker-checky
