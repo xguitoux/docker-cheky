@@ -11,7 +11,6 @@ RUN wget -qO- https://github.com/just-containers/s6-overlay/releases/download/v$
 
 # Install cheky
 # (https://github.com/Blount/LBCAlerte/)
-ENV CHEKY_VER 3.6.1
 
 WORKDIR /tmp
 RUN git clone https://github.com/Blount/LBCAlerte.git -b dev
