@@ -16,7 +16,7 @@ WORKDIR /tmp
 RUN git clone https://github.com/Blount/LBCAlerte.git -b dev
 
 RUN rm -fr /var/www/html && \
-    mv LBCAlerte /var/www/html && \
+    mv /tmp/LBCAlerte /var/www/html && \
 RUN chown -R www-data:www-data /var/www/html
 
 # Copy all the rootfs dir into the container
