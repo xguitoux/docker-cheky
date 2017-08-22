@@ -7,11 +7,6 @@ jobs:
       script:
       - echo $DOCKER_USERNAME
       - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-      - docker build -t $DOCKER_USERNAME/docker-checky .
+      - docker build -t $DOCKER_USERNAME/docker-checky:3.6 -t $DOCKER_USERNAME/docker-checky:latest .
       - docker images
-      - docker tag $DOCKER_USERNAME/docker-checky $DOCKER_USERNAME/docker-cheky:3.6
-      - docker images
-      - docker push $DOCKER_USERNAME/docker-checky:3.6
-      - docker tag $DOCKER_USERNAME/docker-checky $DOCKER_USERNAME/docker-cheky:latest
-      - docker images
-      - docker push $DOCKER_USERNAME/docker-checky:latest
+      - docker push $DOCKER_USERNAME/docker-checky
