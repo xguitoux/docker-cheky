@@ -6,8 +6,9 @@ jobs:
     - stage: build docker image
       script:
       - VERSION=$(cat VERSION)
+      - echo $VERSION
       - echo $DOCKER_USERNAME
       - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-      - docker build -t $DOCKER_USERNAME/docker-checky:$VERSION -t $DOCKER_USERNAME/docker-checky:latest .
+      - docker build -t $DOCKER_USERNAME/docker-checky:$VERSION -t $DOCKER_USERNAME/docker-checky:latest --build-arg CHEKY_VER=$VERSION.
       - docker images
       - docker push $DOCKER_USERNAME/docker-checky
