@@ -18,9 +18,8 @@ RUN cd /tmp && \
     tar xzf ${CHEKY_VER}.tar.gz && \
     rm -fr /var/www/html && \
     mv LBCAlerte-${CHEKY_VER} /var/www/html && \
-    chmod -R 755 /var/www/html && \
-    chown -R www-data:www-data /var/www/html \
     rm -f ${CHEKY_VER}.tar.gz
+RUN chown -R www-data:www-data /var/www/html
 
 # Copy all the rootfs dir into the container
 COPY rootfs /
