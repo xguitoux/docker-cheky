@@ -15,7 +15,7 @@ Dockerize version of **[Cheky](https://github.com/Blount/LBCAlerte)**.
 Simply run the docker image and expose the port 80:
 
 ```
-$ docker run -d --name=cheky -p 80:80 menardorama/cheky:latest
+$ docker run -d --name=cheky -p 80:80 menardorama/docker-cheky:latest
 ```
 
 ### Persistent data
@@ -23,7 +23,7 @@ $ docker run -d --name=cheky -p 80:80 menardorama/cheky:latest
 To persist **Cheky** configuration you can bind mount a docker volume to ``/var/www/html/var/``.
 
 ```
-$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  menardorama/cheky:latestv
+$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  menardorama/docker-cheky:latestv
 ```
 
 
