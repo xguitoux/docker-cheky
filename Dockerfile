@@ -1,7 +1,7 @@
 FROM php:5-apache
 
 # Zip required for automatic updates
-RUN RUN docker-php-ext-install zip
+RUN docker-php-ext-install zip
 
 # Packages
 RUN apt-get update && \
