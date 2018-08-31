@@ -11,7 +11,7 @@ RUN apt-get install -y \
 
 # Install s6-overlay
 # (https://github.com/just-containers/s6-overlay)
-ENV S6_OVERLAY_VER 1.19.1.1
+ENV S6_OVERLAY_VER 1.21.4.0
 RUN wget -qO- https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VER}/s6-overlay-amd64.tar.gz | tar xz -C /
 
 # Install cheky
