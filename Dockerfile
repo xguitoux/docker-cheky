@@ -1,5 +1,8 @@
 FROM php:5-apache
 
+# Zip required for automatic updates
+RUN RUN docker-php-ext-install zip
+
 # Packages
 RUN apt-get update && \
     apt-get install wget cron -y
@@ -11,7 +14,7 @@ RUN wget -qO- https://github.com/just-containers/s6-overlay/releases/download/v$
 
 # Install cheky
 # (https://github.com/Blount/LBCAlerte/)
-ENV CHEKY_VER 4.1
+ENV CHEKY_VER 4.3.3
 
 ADD https://github.com/Blount/Cheky/archive/${CHEKY_VER}.tar.gz /tmp
 RUN cd /tmp && \
