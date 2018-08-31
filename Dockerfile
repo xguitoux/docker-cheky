@@ -2,12 +2,8 @@ FROM php:5-apache
 
 # Packages
 RUN apt-get update && \
-    apt-get install wget cron -y
-
-# Install zip
-RUN apt-get install -y \
-         zlib1g-dev \
-         && docker-php-ext-install zip
+    apt-get install wget cron zlib1g-dev -y \
+    && docker-php-ext-install zip mysqli
 
 # Install s6-overlay
 # (https://github.com/just-containers/s6-overlay)
