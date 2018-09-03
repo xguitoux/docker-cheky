@@ -7,4 +7,4 @@ if [ "$CHEKY_CRON_INTERVAL" == "" ]; then
     export CHEKY_CRON_INTERVAL="*/30 * * * *"
 fi
 
-sudo /usr/local/bin/envtpl /etc/envtpl/check-cron.tpl -o /etc/cron.d/cheky
+ /usr/local/bin/envtpl /etc/envtpl/check-cron.tpl -o /etc/cron.d/cheky
