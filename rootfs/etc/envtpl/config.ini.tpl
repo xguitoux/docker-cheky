@@ -10,7 +10,7 @@ user_agent = "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.6) Gecko/201006
 [general]
 check_start = 7
 check_end = 24
-version = 3.4
+version = {{.CHEKY_VER}}}
 baseurl = "{{.CHEKY_BASEURL}}"
 
 [storage]
