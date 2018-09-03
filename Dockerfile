@@ -11,7 +11,7 @@ ENV S6_OVERLAY_VER 1.21.4.0
 RUN wget -qO- https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VER}/s6-overlay-amd64.tar.gz | tar xz -C /
 
 # Install cheky
-# (https://github.com/Blount/LBCAlerte/)
+# (https://github.com/Blount/Cheky)
 ENV CHEKY_VER 4.3.3
 
 ADD https://github.com/Blount/Cheky/archive/${CHEKY_VER}.tar.gz /tmp
