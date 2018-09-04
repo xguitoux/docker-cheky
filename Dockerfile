@@ -1,4 +1,4 @@
-FROM php:5-apache
+FROM php:7.0-apache
 
 # Packages
 RUN apt-get update && \
