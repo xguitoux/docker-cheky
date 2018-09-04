@@ -1,8 +1,8 @@
 # docker-cheky
 
-This a fork of menardorama/docker-cheky. It's just a more up to date version.
+Added MySql dependencies in case you want to switch to MySql storage instead of file storage.
 
-Automated build using travis CI
+This a fork of menardorama/docker-cheky. It's just a more up to date version.
 
 Dockerize version of **[Cheky](https://github.com/Blount/Cheky)**.
 
@@ -23,7 +23,7 @@ $ docker run -d --name=cheky -p 80:80 xguitoux/docker-cheky:latest
 To persist **Cheky** configuration you can bind mount a docker volume to ``/var/www/html/var/``.
 
 ```
-$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  xguitoux/docker-cheky:latestv
+$ docker run -d --name=cheky -p 80:80 -v <host_cheky_data_dir>:/var/www/html/var/  xguitoux/docker-cheky:latest
 ```
 
 
