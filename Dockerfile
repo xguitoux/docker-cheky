@@ -12,7 +12,7 @@ RUN wget -qO- https://github.com/just-containers/s6-overlay/releases/download/v$
 
 # Install cheky
 # (https://github.com/Blount/Cheky)
-ENV CHEKY_VER 4.3.3
+ENV CHEKY_VER 4.3.5
 
 ADD https://github.com/Blount/Cheky/archive/${CHEKY_VER}.tar.gz /tmp
 RUN cd /tmp && \
