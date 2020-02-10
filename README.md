@@ -142,40 +142,42 @@ Set the cron interval for the **Cheky** [check cronjob](https://www.cheky.net/do
 
 ### 3 services Cheky / Database (mysql) / Database browser (adminer)
 
+```yaml
 cheky:
-    &nbsp;&nbsp;depends_on:
-       &nbsp;&nbsp;&nbsp;&nbsp;-- db
-    &nbsp;&nbsp;image: xguitoux/docker-cheky
-    &nbsp;&nbsp;user: root
-    &nbsp;&nbsp;container_name: cheky
-    &nbsp;&nbsp;restart: always
-    &nbsp;&nbsp;environment:
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_BASEURL=http://yourcheky.url
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_ADMIN_PASSWORD=myPassW0rd
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_ADMIN_PASSWORD_SHA1=fdsq161fds5q5fdsq1f9sdq1fsdq
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_CONFIG_MAILER=1
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_MAILER_SMTP_HOST=mail.gandi.net
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_MAILER_SMTP_PORT=587
-     &nbsp;&nbsp; &nbsp;&nbsp;-- CHEKY_MAILER_SMTP_USERNAME=checky@yourdomain.me
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_MAILER_SMTP_PASSWORD=myPassW0rd
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_MAILER_SMTP_SECURE=tls
-      &nbsp;&nbsp;&nbsp;&nbsp;-- CHEKY_MAILER_FROM=checky@yourdomain.me
-    &nbsp;&nbsp;ports:
-      &nbsp;&nbsp;&nbsp;&nbsp;-- 7251:80
-    &nbsp;&nbsp;volumes:
-      &nbsp;&nbsp;&nbsp;&nbsp;-- /home/media/cheky:/var/www/html/var/
-      &nbsp;&nbsp;&nbsp;&nbsp;-- /home/media/cheky/container_logs:/var/log/
+    depends_on:
+        - db
+    image: xguitoux/docker-cheky
+    user: root
+    container_name: cheky
+    restart: always
+    environment:
+        - 'CHEKY_BASEURL=http://yourcheky.url'
+        - CHEKY_ADMIN_PASSWORD=myPassW0rd
+        - CHEKY_ADMIN_PASSWORD_SHA1=fdsq161fds5q5fdsq1f9sdq1fsdq
+        - CHEKY_CONFIG_MAILER=1
+        - CHEKY_MAILER_SMTP_HOST=mail.gandi.net
+        - CHEKY_MAILER_SMTP_PORT=587
+        - CHEKY_MAILER_SMTP_USERNAME=checky@yourdomain.me
+        - CHEKY_MAILER_SMTP_PASSWORD=myPassW0rd
+        - CHEKY_MAILER_SMTP_SECURE=tls
+        - CHEKY_MAILER_FROM=checky@yourdomain.me
+    ports:
+        - '7251:80'
+    volumes:
+        - '/home/media/cheky:/var/www/html/var/'
+        - '/home/media/cheky/container_logs:/var/log/'
 db:
-    &nbsp;&nbsp;image: mysql
-    &nbsp;&nbsp;container_name: mysql
-    &nbsp;&nbsp;ports:
-      &nbsp;&nbsp;&nbsp;&nbsp;-- 6603:3306
-    &nbsp;&nbsp;command: --default-authentication-plugin=mysql_native_password
-    &nbsp;&nbsp;restart: always
-    &nbsp;&nbsp;environment:
-      &nbsp;&nbsp;&nbsp;&nbsp;MYSQL_ROOT_PASSWORD: myPassW0rd
+    image: mysql
+    container_name: mysql
+    ports:
+        - '6603:3306'
+    command: '--default-authentication-plugin=mysql_native_password'
+    restart: always
+    environment:
+        - MYSQL_ROOT_PASSWORD=myPassW0rd
 adminer:
-    &nbsp;&nbsp;image: adminer
-    &nbsp;&nbsp;restart: always
-    &nbsp;&nbsp;ports:
-      &nbsp;&nbsp;&nbsp;&nbsp;-- 7252:8080
+    image: adminer
+    restart: always
+    ports:
+        - '7252:8080'
+```
